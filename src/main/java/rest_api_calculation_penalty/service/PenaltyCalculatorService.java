@@ -21,9 +21,6 @@ public class PenaltyCalculatorService {
 
     public List<PenaltyRecord> calculatePenalties(PenaltyCalculationRequest request) {
 
-        //monthPeriodStart   ----МесяцПериодНачРасчета
-        //
-        //currentMonthCycle   ---МесяцТекущегоЦикла
 
         // Вызов валидатора для проверки входного запроса
         PenaltyCalculationRequestValidator.validate(request);
