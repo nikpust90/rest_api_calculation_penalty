@@ -3,7 +3,7 @@ version: '3.8'
 services:
   app:
     build: .
-    container_name: app_rest_api_calculation_penalty
+    container_name: rest_api_calculation_penalty
     restart: always
     environment:
       SPRING_APPLICATION_NAME: rest_api_calculation_penalty
@@ -11,4 +11,4 @@ services:
       SPRING_DATASOURCE_USERNAME: ${SPRING_DATASOURCE_USERNAME}
       SPRING_DATASOURCE_PASSWORD: ${SPRING_DATASOURCE_PASSWORD}
     ports:
-      - "8081:8081"
+      - "8082:8082"
