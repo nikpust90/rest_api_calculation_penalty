@@ -7,11 +7,11 @@ services:
     restart: always
     environment:
       SPRING_APPLICATION_NAME: rest_api_calculation_penalty
-      SPRING_DATASOURCE_URL: jdbc:postgresql://95.31.250.137:5433/projekt2
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/projekt2
       SPRING_DATASOURCE_USERNAME: ${SPRING_DATASOURCE_USERNAME}
       SPRING_DATASOURCE_PASSWORD: ${SPRING_DATASOURCE_PASSWORD}
     ports:
-      - "8082:8082"  # Приводим порты в соответствие с Dockerfile
+      - "8082:8082"
     depends_on:
       - db
 
