@@ -11,7 +11,11 @@ import rest_api_calculation_penalty.service.PenaltyCalculatorService;
 import java.util.List;
 
 // Контроллер, который принимает запрос от 1С
-@Slf4j
+
+
+import java.util.List;
+
+@Slf4j // <-- Добавь это
 @RestController
 @RequestMapping("/api")
 @RequiredArgsConstructor
@@ -36,4 +40,5 @@ class PenaltyCalculatorController {
         return ResponseEntity.ok(result);
     }
 }
+
 
