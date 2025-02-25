@@ -1,6 +1,8 @@
 package rest_api_calculation_penalty.controllers;
 
+import lombok.Getter;
 import lombok.RequiredArgsConstructor;
+import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -39,6 +41,36 @@ class PenaltyCalculatorController {
 
         return ResponseEntity.ok(result);
     }
+
+    //Этот контроллер принимает JSON-запрос с объектом { "name": "пример", "value": 123 }
+    // и возвращает JSON-ответ { "message": "Получено: пример, 123" }.
+    @PostMapping("/data")
+    public ResponseData receiveData(@RequestBody RequestData requestData) {
+        // Обрабатываем полученные данные
+        String message = "Получено: " + requestData.getName() + ", " + requestData.getValue();
+        return new ResponseData(message);
+    }
+
+    // Вспомогательный класс для приема JSON
+    @Setter
+    @Getter
+    public static class RequestData {
+        private String name;
+        private int value;
+
+    }
+
+    // Вспомогательный класс для отправки JSON
+    @Setter
+    @Getter
+    public static class ResponseData {
+        private String message;
+
+        public ResponseData(String message) { this.message = message; }
+
+    }
+
+
 }
 
 
